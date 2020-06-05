@@ -1,10 +1,10 @@
 import Rete from "rete";
-import NumControl from "@/components/NodeEditor/rete-components/NumControl";
+import ReteNumberInputControl from "@/components/NodeEditor/rete-components/NumberControl/ReteNumberInputControl";
 import numSocket from "@/components/NodeEditor/rete-components/NumSocketType";
 
 
 
-export class AdditionNode extends Rete.Component {
+export class ReteAdditionNode extends Rete.Component {
     constructor(){
         super("Add");
     }
@@ -14,13 +14,13 @@ export class AdditionNode extends Rete.Component {
         var inp2 = new Rete.Input('num-in-2', "Number2", numSocket);
         var out = new Rete.Output('num-out', "Number", numSocket);
 
-        inp1.addControl(new NumControl(this.editor, 'num-in-1'))
-        inp2.addControl(new NumControl(this.editor, 'num-in-2'))
+        inp1.addControl(new ReteNumberInputControl(this.editor, 'num-in-1'))
+        inp2.addControl(new ReteNumberInputControl(this.editor, 'num-in-2'))
 
         return node
             .addInput(inp1)
             .addInput(inp2)
-            .addControl(new NumControl(this.editor, 'preview', true))
+            .addControl(new ReteNumberInputControl(this.editor, 'preview', true))
             .addOutput(out);
     }
 

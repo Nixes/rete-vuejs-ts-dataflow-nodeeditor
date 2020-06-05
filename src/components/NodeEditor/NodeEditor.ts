@@ -4,13 +4,13 @@ import ConnectionPlugin from "rete-connection-plugin";
 import AreaPlugin from "rete-area-plugin";
 import ContextMenuPlugin from "rete-context-menu-plugin";
 import Rete from "rete";
-import NumberOutputNode from "@/components/NodeEditor/rete-components/NumberOutputNode/NumberOutputNode";
-import {AdditionNode} from "@/components/NodeEditor/rete-components/AdditionNode/AdditionNode";
+import ReteNumberOutputNode from "@/components/NodeEditor/rete-components/NumberOutputNode/ReteNumberOutputNode";
+import {ReteAdditionNode} from "@/components/NodeEditor/rete-components/AdditionNode/ReteAdditionNode";
 
 let nodeEditor = async function(container) {
   var components = [
-    new NumberOutputNode(),
-    new AdditionNode()
+    new ReteNumberOutputNode(),
+    new ReteAdditionNode()
   ];
 
   var editor = new Rete.NodeEditor("demo@0.1.0", container);

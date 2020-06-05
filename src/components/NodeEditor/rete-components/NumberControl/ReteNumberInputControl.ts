@@ -1,9 +1,9 @@
 import Rete from "rete";
 import {VueConstructor} from "vue";
-import VueNumControlComponent from "@/components/NodeEditor/rete-components/NumberOutputNode/VueNumberOutputNode.vue";
+import VueNumControlComponent from "@/components/NodeEditor/rete-components/NumberControl/VueNumberInputControl.vue";
 
 
-export default class NumControl extends Rete.Control {
+export default class ReteNumberInputControl extends Rete.Control {
     private props: { readonly: any; ikey: any; emitter: any };
     private component: VueConstructor;
     private vueContext: any;
