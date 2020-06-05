@@ -2,7 +2,7 @@
     <input type="number" :readonly="readonly" :value="value" @input="change($event)" @dblclick.stop="" @pointerdown.stop="" @pointermove.stop=""/>
 </template>
 
-<script>
+<script lang="ts">
 import Vue from "vue";
 
 export default Vue.extend({

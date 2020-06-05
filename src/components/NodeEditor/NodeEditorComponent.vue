@@ -2,7 +2,7 @@
   <div id="rete" v-show="visible" ref="rete"></div>
 </template>
 
-<script>
+<script lang="ts">
 
 import NodeEditor from "./NodeEditor";
 import Vue from "vue";
