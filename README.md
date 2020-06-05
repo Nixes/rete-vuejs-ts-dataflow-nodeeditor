@@ -1,4 +1,5 @@
-# tech-tree-editor-ts
+# rete-vuejs-ts-dataflow-nodeeditor
+
 
 ## Project setup
 ```
