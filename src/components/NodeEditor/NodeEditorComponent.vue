@@ -1,5 +1,4 @@
 <template>
-<!-- rete injects overflow:hidden here which somehow breaks rendering -->
   <div id="rete" v-show="visible" ref="rete"></div>
 </template>
 
@@ -23,10 +22,6 @@ export default Vue.extend( {
     }
   },
   mounted() {
-    // this.store.configurator.subscribe(configurator => {
-    //   if (configurator) NodeEditor(this.$refs.rete, configurator);
-    // });
-
     NodeEditor(this.$refs.rete);
 
     document.addEventListener("keydown", this.keydown);
