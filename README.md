@@ -1,5 +1,6 @@
 # rete-vuejs-ts-dataflow-nodeeditor
 
+does not yet compile in typescript strict mode
 
 ## Project setup
 ```
