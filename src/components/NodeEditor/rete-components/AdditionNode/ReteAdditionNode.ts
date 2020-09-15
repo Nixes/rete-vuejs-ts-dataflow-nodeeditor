@@ -1,6 +1,7 @@
-import Rete from "rete";
+import Rete, {Node} from "rete";
 import ReteNumberInputControl from "@/components/NodeEditor/rete-components/NumberControl/ReteNumberInputControl";
 import numSocket from "@/components/NodeEditor/rete-components/NumSocketType";
+import {NodeData, WorkerInputs, WorkerOutputs} from "rete/types/core/data";
 
 
 
@@ -9,7 +10,7 @@ export class ReteAdditionNode extends Rete.Component {
         super("Add");
     }
 
-    builder(node) {
+    builder(node: Node) {
         var inp1 = new Rete.Input('num-in-1',"Number", numSocket);
         var inp2 = new Rete.Input('num-in-2', "Number2", numSocket);
         var out = new Rete.Output('num-out', "Number", numSocket);
@@ -24,10 +25,10 @@ export class ReteAdditionNode extends Rete.Component {
             .addOutput(out);
     }
 
-    worker(node, inputs, outputs) {
-        var n1 = inputs['num'].length?inputs['num'][0]:node.data.num1;
-        var n2 = inputs['num2'].length?inputs['num2'][0]:node.data.num2;
-        var sum = n1 + n2;
+    worker(node: NodeData, inputs: WorkerInputs, outputs:WorkerOutputs) {
+        const n1: number|undefined = inputs['num'].length ? inputs['num'][0]:node.data.num1 as number;
+        const n2: number|undefined = inputs['num2'].length ? inputs['num2'][0]:node.data.num2 as number;
+        const sum = n1 + n2;
 
         // @ts-ignore not sure why this does not work, pulled it from an example
         this.editor.nodes.find(n => n.id == node.id).controls.get('preview').setValue(sum);

@@ -8,14 +8,14 @@ export default class ReteNumberInputControl extends Rete.Control {
     private component: VueConstructor;
     private vueContext: any;
 
-    constructor(emitter, key, readonly = undefined) {
+    constructor(emitter: any, key: string, readonly: boolean|undefined = undefined) {
         super(key);
         this.component = VueNumControlComponent;
         // readonly is not specified anywhere the docs, and it does not seem to be read
         this.props = { emitter, ikey: key, readonly };
     }
 
-    setValue(val) {
+    setValue(val:number) {
         this.vueContext.value = val;
     }
 }
