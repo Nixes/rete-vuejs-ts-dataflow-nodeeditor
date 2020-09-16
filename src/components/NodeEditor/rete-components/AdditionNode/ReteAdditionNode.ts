@@ -26,12 +26,12 @@ export class ReteAdditionNode extends Rete.Component {
     }
 
     worker(node: NodeData, inputs: WorkerInputs, outputs:WorkerOutputs) {
-        const n1: number = (inputs['num'].length ? inputs['num'][0]:node.data.num1) as number;
-        const n2: number = (inputs['num2'].length ? inputs['num2'][0]:node.data.num2) as number;
+        const n1: number = (inputs['num-in-1'].length ? inputs['num-in-1'][0]:node.data.num1) as number;
+        const n2: number = (inputs['num-in-2'].length ? inputs['num-in-2'][0]:node.data.num2) as number;
         const sum: number = n1 + n2;
 
         // @ts-ignore not sure why this does not work, pulled it from an example
         this.editor.nodes.find(n => n.id == node.id).controls.get('preview').setValue(sum);
-        outputs['num'] = sum;
+        outputs['num-out'] = sum;
     }
 }
