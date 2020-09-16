@@ -13,8 +13,9 @@ export default Vue.extend({
         }
     },
     methods: {
-        change(e){
-            this.value = +e.target.value;
+        change(e: InputEvent) {
+            const target = e.target as HTMLInputElement;
+            this.value = + target.value;
             this.update();
         },
         update() {

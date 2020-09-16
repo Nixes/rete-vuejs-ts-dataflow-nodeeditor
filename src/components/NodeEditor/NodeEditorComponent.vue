@@ -14,10 +14,10 @@ export default Vue.extend( {
     };
   },
   methods: {
-    keydown(e) {
+    keydown(e: KeyboardEvent) {
       if (e.key === "Control") this.visible = false;
     },
-    keyup(e) {
+    keyup(e: KeyboardEvent) {
       if (e.key === "Control") this.visible = true;
     }
   },

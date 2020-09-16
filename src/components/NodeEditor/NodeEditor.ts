@@ -1,25 +1,27 @@
 // @ts-ignore
 import VueRenderPlugin from "rete-vue-render-plugin";
 import ConnectionPlugin from "rete-connection-plugin";
+// @ts-ignore
 import AreaPlugin from "rete-area-plugin";
+// @ts-ignore
 import ContextMenuPlugin from "rete-context-menu-plugin";
 import Rete from "rete";
 import ReteNumberOutputNode from "@/components/NodeEditor/rete-components/NumberOutputNode/ReteNumberOutputNode";
 import {ReteAdditionNode} from "@/components/NodeEditor/rete-components/AdditionNode/ReteAdditionNode";
 
-let nodeEditor = async function(container) {
-  var components = [
+let nodeEditor = async function(container: any|HTMLElement) {
+  const components = [
     new ReteNumberOutputNode(),
     new ReteAdditionNode()
   ];
 
-  var editor = new Rete.NodeEditor("demo@0.1.0", container);
+  const editor = new Rete.NodeEditor("demo@0.1.0", container);
   editor.use(ConnectionPlugin);
   editor.use(VueRenderPlugin);
   editor.use(ContextMenuPlugin);
   editor.use(AreaPlugin);
 
-  var engine = new Rete.Engine("demo@0.1.0");
+  const engine = new Rete.Engine("demo@0.1.0");
 
   components.map(c => {
     editor.register(c);
